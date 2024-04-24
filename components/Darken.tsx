@@ -1,0 +1,20 @@
+import type { ReactNode } from "react";
+import { StyleSheet, View } from "react-native";
+
+const styles = StyleSheet.create({
+	darken: {
+		width: "100%",
+		height: "100%",
+	},
+});
+
+export type DarkenProps = {
+	children?: ReactNode;
+	opacity?: number;
+};
+
+export default function Darken({ children, opacity = 0.4 }: DarkenProps) {
+	const backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+
+	return <View style={{ ...styles.darken, backgroundColor }}>{children}</View>;
+}

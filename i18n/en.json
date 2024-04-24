@@ -1,0 +1,34 @@
+{
+	"home": {
+		"subtitle": "Bourbon Island's Pirates"
+	},
+	"bottom_bar": {
+		"start": "Begin adventure",
+		"story": "Story",
+		"next": "Next",
+		"finish": "Finish the quest",
+		"continue": "Proceed",
+		"back": "Go back"
+	},
+	"name_setting": {
+		"banner": "Aye, I don't be knowin' ye, landlubber... Who be ye?",
+		"state_your_name": "State yer name :"
+	},
+	"qr_camera": {
+		"scan_code": "Avast! {{username}}, scan th' QR code to embark on yer next adventure!"
+	},
+	"quest_1": {
+		"introduction": "{{username}}!!\nI be needin' ye! Lighten yer path ‘n come topside!"
+	},
+	"quest_2": {
+		"introduction": "Outside, you see Buzzard, Captain of The Victorious. Looking at you, he says...",
+		"buzzard_screen_1": "Arr, ye've come quick, matey! Help attack th’ Nossa Senhora do Cabo!",
+		"buzzard_screen_2": "Lend a hand 'n load th’ pistols, {{username}}.\nGive 'em a good shake!"
+	},
+	"quest_3": {
+		"introduction": "While boarding, the crew quickly responded. Whilst fighting, Buzzard says...",
+		"buzzard_screen_1": "Aye {{username}}! Invoke Blackbeard to aid us settlin’ this fight!",
+		"buzzard_screen_2": "Many thanks fer all. Join me in me quarters once our work be done."
+	},
+	"end_of_story": "I be in yer debt, matey. Take this gold as a token o' me thanks."
+}

@@ -1,0 +1,22 @@
+<svg width="57" height="50" viewBox="0 0 57 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_209_826)">
+        <mask id="mask0_209_826" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="57" height="50">
+            <ellipse cx="28.9022" cy="25" rx="28.0447" ry="25" fill="#D9D9D9"/>
+        </mask>
+        <g mask="url(#mask0_209_826)">
+            <path d="M0.857483 0H56.9469V50H0.857483V0Z" fill="#012169"/>
+            <path d="M7.43046 0L28.8146 18.8542L50.111 0H56.9469V6.45833L35.9134 25.1042L56.9469 43.6458V50H49.9357L28.9022 31.3542L7.9563 50H0.857483V43.75L21.8034 25.2083L0.857483 6.66667V0H7.43046Z"
+                  fill="white"/>
+            <path d="M38.0167 29.2708L56.9469 45.8333V50L33.1965 29.2708H38.0167ZM21.891 31.3542L22.4169 35L5.59003 50H0.857483L21.891 31.3542ZM56.9469 0V0.3125L35.1246 19.8958L35.2999 15.3125L52.5649 0H56.9469ZM0.857483 0L21.8034 18.3333H16.545L0.857483 4.375V0Z"
+                  fill="#C8102E"/>
+            <path d="M21.9787 0V50H36.001V0H21.9787ZM0.857483 16.6667V33.3333H56.9469V16.6667H0.857483Z" fill="white"/>
+            <path d="M0.857483 20.1042V30.1042H56.9469V20.1042H0.857483ZM24.7831 0V50H33.1965V0H24.7831Z"
+                  fill="#C8102E"/>
+        </g>
+    </g>
+    <defs>
+        <clipPath id="clip0_209_826">
+            <rect width="56.0894" height="50" fill="white" transform="translate(0.857483)"/>
+        </clipPath>
+    </defs>
+</svg>

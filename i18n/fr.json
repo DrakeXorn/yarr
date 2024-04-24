@@ -1,0 +1,34 @@
+{
+	"home": {
+		"subtitle": "Les pirates de l'Ile Bourbon"
+	},
+	"bottom_bar": {
+		"start": "Demarrer l'histoire",
+		"story": "QR",
+		"next": "Suivant",
+		"finish": "Terminer la quete",
+		"continue": "Continuer",
+		"back": "Retour"
+	},
+	"name_setting": {
+		"banner": "Aye, je ne te connais pas, moussaillon. Qui es-tu ?",
+		"state_your_name": "Renseigne ton nom :"
+	},
+	"qr_camera": {
+		"scan_code": "Halte ! {{username}}, scanne le code QR pour embarquer dans une nouvelle aventure !"
+	},
+	"quest_1": {
+		"introduction": "{{username}} !!\nJ'ai besoin de toi ! Éclaire ton chemin et viens sur le pont !"
+	},
+	"quest_2": {
+		"introduction": "Dehors, tu vois Buzzard, le Capitaine du Victorious. En te regardant, il dit...",
+		"buzzard_screen_1": "Arr, tu es venu vite, matelot ! Aide-nous à attaquer le Nossa Senhora do Cabo !",
+		"buzzard_screen_2": "Donne un coup de main et charge les pistolets, {{username}}.\nSecoue-les bien !"
+	},
+	"quest_3": {
+		"introduction": "Lors de l'abordage, l'équipage a réagi rapidement. Pendant le combat, Buzzard dit...",
+		"buzzard_screen_1": "Aye {{username}} ! Convoque Barbe Noire pour nous aider à gagner ce combat !",
+		"buzzard_screen_2": "Je te dois des remerciements. Rejoins-moi dans mes quartiers une fois ce travail terminé."
+	},
+	"end_of_story": "Je te suis redevable, matelot. Prends cet or en gage de ma gratitude."
+}
