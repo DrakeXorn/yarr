@@ -20,7 +20,16 @@ type BottomBarLinkButtonProps = PressableProps & {
 	linkTo: Href<string>;
 };
 
-export function BottomBarLinkButton({
+/**
+ * A button that links to a specific route in the app.
+ *
+ * @param {BottomBarLinkButtonProps} props The component properties.
+ * @param {ReactNode} props.children The children to render.
+ * @param {Href<string>} props.linkTo The route to link to.
+ *
+ * @constructor
+ */
+export default function BottomBarLinkButton({
 	children,
 	linkTo,
 	...props

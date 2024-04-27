@@ -36,6 +36,11 @@ i18next.use(initReactI18next).init({
 	},
 });
 
+/**
+ * Application root layout
+ *
+ * @constructor
+ */
 export default function RootLayout() {
 	const [loaded, error] = useFonts({
 		TheRumIsGone: require("../assets/fonts/TheRumIsGone.ttf"),
@@ -60,6 +65,10 @@ export default function RootLayout() {
 	return <RootLayoutNav />;
 }
 
+/**
+ * Root application layout navigator
+ * @constructor
+ */
 function RootLayoutNav() {
 	return (
 		<ThemeProvider value={DefaultTheme}>

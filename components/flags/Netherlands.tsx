@@ -1,6 +1,11 @@
 import * as React from "react";
 import Svg, { ClipPath, Defs, Ellipse, G, Mask, Path } from "react-native-svg";
 
+/**
+ * The SVG representation of the Netherlands flag.
+ *
+ * @constructor
+ */
 export default function Netherlands() {
 	return (
 		<Svg width={57} height={50} fill="none">

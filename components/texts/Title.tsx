@@ -8,13 +8,21 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default function Title(props: TextProps) {
+/**
+ * A title text component, rendered with the "The rum is gone" font family.
+ *
+ * @param style Some additional text style.
+ * @param props The text properties.
+ *
+ * @constructor
+ */
+export default function Title({ style, ...props }: TextProps) {
 	return (
 		<Text
 			{...props}
 			style={[
 				commonTextStyles.text,
-				props.style,
+				style,
 				commonTextStyles.rumIsGone,
 				styles.title,
 			]}

@@ -2,8 +2,12 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { ImageBackground, StyleSheet, View } from "react-native";
 
-import { BottomBar, Darken, LanguageButton } from "@/components";
-import { BottomBarLinkButton } from "@/components/StyledButton";
+import {
+	BottomBar,
+	BottomBarLinkButton,
+	Darken,
+	LanguageButton,
+} from "@/components";
 import { Hook } from "@/components/icons";
 import { RumIsGoneText, Title, TreasureMapText } from "@/components/texts";
 import { Colors, Languages } from "@/constants";
@@ -31,6 +35,11 @@ const styles = StyleSheet.create({
 	},
 });
 
+/**
+ * The container for the titles of the home page.
+ *
+ * @constructor
+ */
 function TitlesContainer() {
 	const { t } = useTranslation();
 
@@ -42,16 +51,26 @@ function TitlesContainer() {
 	);
 }
 
+/**
+ * The container for the language selection buttons.
+ *
+ * @constructor
+ */
 function LanguageButtonsContainer() {
 	return (
 		<View style={styles.langButtonsContainer}>
 			{Languages.map((lang) => (
-				<LanguageButton flag={lang} key={lang} />
+				<LanguageButton language={lang} key={lang} />
 			))}
 		</View>
 	);
 }
 
+/**
+ * The home page of the application.
+ *
+ * @constructor
+ */
 export default function HomePage() {
 	const { t } = useTranslation();
 

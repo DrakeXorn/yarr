@@ -25,6 +25,13 @@ export const AppConfigurationContext = createContext(
 	null as unknown as AppConfigurationContextType,
 );
 
+/**
+ * Provides the configuration for the app.
+ *
+ * @param children The children to render.
+ *
+ * @constructor
+ */
 export default function AppConfigurationProvider({
 	children,
 }: LanguageProviderProps) {

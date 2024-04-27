@@ -9,7 +9,7 @@ import {
 } from "@/providers/AppConfigurationProvider";
 
 export type LanguageButtonProps = {
-	flag: Language;
+	language: Language;
 };
 
 const styles = StyleSheet.create({
@@ -30,22 +30,30 @@ const langToFlag: { [key in Language]: FunctionComponent } = {
 	nl: Netherlands,
 };
 
-export default function LanguageButton({ flag }: LanguageButtonProps) {
+/**
+ * A button to change the language of the app.
+ *
+ * @param {LanguageButtonProps} props - The props of the component.
+ * @param {Language} props.language - The language to change to.
+ *
+ * @returns The language button.
+ */
+export default function LanguageButton({ language }: LanguageButtonProps) {
 	const { configuration, setConfiguration } =
 		useContext<AppConfigurationContextType>(AppConfigurationContext);
 
 	const onPress = useCallback(() => {
-		setConfiguration({ ...configuration, language: flag });
-	}, [flag, configuration, setConfiguration]);
+		setConfiguration({ ...configuration, language: language });
+	}, [language, configuration, setConfiguration]);
 
-	const Flag = langToFlag[flag];
+	const Flag = langToFlag[language];
 
 	return (
 		<Pressable
 			onPress={onPress}
 			style={[
 				styles.button,
-				configuration.language !== flag ? styles.unselected : {},
+				configuration.language !== language ? styles.unselected : {},
 			]}
 		>
 			<Flag />

@@ -1,5 +1,10 @@
 import Svg, { Path } from "react-native-svg";
 
+/**
+ * The SVG representation of a pirate hook.
+ *
+ * @constructor
+ */
 export default function Hook() {
 	return (
 		<Svg width={55} height={20} fill="none">

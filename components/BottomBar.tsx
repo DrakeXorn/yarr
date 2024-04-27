@@ -1,9 +1,5 @@
-import type { ReactNode } from "react";
+import type { PropsWithChildren } from "react";
 import { StyleSheet, View } from "react-native";
-
-type Props = {
-	children?: ReactNode;
-};
 
 const styles = StyleSheet.create({
 	bar: {
@@ -24,7 +20,14 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default function BottomBar({ children }: Props) {
+/**
+ * The bottom bar that is displayed at the bottom of the screen.
+ *
+ * @param children
+ *
+ * @constructor
+ */
+export default function BottomBar({ children }: PropsWithChildren) {
 	return (
 		<View style={styles.bar}>
 			<View style={styles.container}>

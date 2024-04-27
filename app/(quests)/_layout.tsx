@@ -1,6 +1,10 @@
 import { Stack } from "expo-router";
 
-export default function QuestsLayout() {
+/**
+ * Quests layout navigator
+ * @constructor
+ */
+export default function QuestsLayoutNav() {
 	return (
 		<Stack
 			screenOptions={{

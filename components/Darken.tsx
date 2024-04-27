@@ -13,6 +13,15 @@ export type DarkenProps = {
 	opacity?: number;
 };
 
+/**
+ * Darken the background with a semi-transparent overlay.
+ *
+ * @param {DarkenProps} props The component properties.
+ * @param {ReactNode} [props.children] The children to render.
+ * @param {number} [props.opacity=0.4] The opacity of the overlay.
+ *
+ * @constructor
+ */
 export default function Darken({ children, opacity = 0.4 }: DarkenProps) {
 	const backgroundColor = `rgba(0, 0, 0, ${opacity})`;
 
