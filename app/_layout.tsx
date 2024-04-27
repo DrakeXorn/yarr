@@ -8,7 +8,7 @@ import React, { useEffect } from "react";
 import { initReactI18next } from "react-i18next";
 import { StatusBar } from "react-native";
 
-import { LanguageProvider } from "@/providers";
+import { AppConfigurationProvider } from "@/providers";
 
 import "intl-pluralrules";
 
@@ -63,7 +63,7 @@ export default function RootLayout() {
 function RootLayoutNav() {
 	return (
 		<ThemeProvider value={DefaultTheme}>
-			<LanguageProvider>
+			<AppConfigurationProvider>
 				<StatusBar hidden={true} />
 				<Stack>
 					<Stack.Screen
@@ -76,7 +76,7 @@ function RootLayoutNav() {
 					/>
 					<Stack.Screen name="(quests)" options={{ headerShown: false }} />
 				</Stack>
-			</LanguageProvider>
+			</AppConfigurationProvider>
 		</ThemeProvider>
 	);
 }

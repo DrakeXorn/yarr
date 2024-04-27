@@ -3,14 +3,14 @@ import { Pressable, StyleSheet } from "react-native";
 
 import { France, GreatBritain, Netherlands } from "@/components/flags";
 import {
+	AppConfigurationContext,
+	type AppConfigurationContextType,
 	type Language,
-	LanguageContext,
-	type LanguageContextType,
-} from "@/providers/LanguageProvider";
+} from "@/providers/AppConfigurationProvider";
 
-export interface LanguageButtonProps {
+export type LanguageButtonProps = {
 	flag: Language;
-}
+};
 
 const styles = StyleSheet.create({
 	button: {
@@ -31,19 +31,22 @@ const langToFlag: { [key in Language]: FunctionComponent } = {
 };
 
 export default function LanguageButton({ flag }: LanguageButtonProps) {
-	const { language, setLanguage } =
-		useContext<LanguageContextType>(LanguageContext);
+	const { configuration, setConfiguration } =
+		useContext<AppConfigurationContextType>(AppConfigurationContext);
 
 	const onPress = useCallback(() => {
-		setLanguage(flag);
-	}, [flag, setLanguage]);
+		setConfiguration({ ...configuration, language: flag });
+	}, [flag, configuration, setConfiguration]);
 
 	const Flag = langToFlag[flag];
 
 	return (
 		<Pressable
 			onPress={onPress}
-			style={[styles.button, language !== flag ? styles.unselected : {}]}
+			style={[
+				styles.button,
+				configuration.language !== flag ? styles.unselected : {},
+			]}
 		>
 			<Flag />
 		</Pressable>

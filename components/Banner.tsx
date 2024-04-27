@@ -2,10 +2,10 @@ import { ImageBackground, StyleSheet, Text, View } from "react-native";
 
 type BannerType = "small" | "default" | "large";
 
-export interface BannerProps {
+export type BannerProps = {
 	text: string;
 	type?: BannerType;
-}
+};
 
 const styles = StyleSheet.create({
 	banner: {

@@ -1,3 +1,3 @@
-import LanguageProvider from "./LanguageProvider";
+import AppConfigurationProvider from "./AppConfigurationProvider";
 
-export { LanguageProvider };
+export { AppConfigurationProvider };
