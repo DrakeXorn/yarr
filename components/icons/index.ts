@@ -1,3 +1,4 @@
-import Hook from "./Hook";
+import BackwardHook from "./BackwardHook";
+import ForwardHook from "./ForwardHook";
 
-export { Hook };
+export { ForwardHook, BackwardHook };

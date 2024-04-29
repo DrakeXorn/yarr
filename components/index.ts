@@ -1,7 +1,15 @@
-import Banner from "@/components/Banner";
-import BottomBar from "@/components/BottomBar";
-import BottomBarLinkButton from "@/components/BottomBarLinkButton";
-import Darken from "@/components/Darken";
-import LanguageButton from "@/components/LanguageButton";
+import Banner from "./Banner";
+import BottomBar from "./BottomBar";
+import BottomBarLinkButton from "./BottomBarLinkButton";
+import Darken from "./Darken";
+import LanguageButton from "./LanguageButton";
+import TitlesContainer from "./TitlesContainer";
 
-export { Banner, BottomBar, Darken, LanguageButton, BottomBarLinkButton };
+export {
+	Banner,
+	BottomBar,
+	Darken,
+	LanguageButton,
+	BottomBarLinkButton,
+	TitlesContainer,
+};

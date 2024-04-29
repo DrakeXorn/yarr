@@ -1,24 +1,27 @@
 import { type Href, Link } from "expo-router";
-import type { ReactNode } from "react";
+import type { PropsWithChildren, ReactNode } from "react";
 import { Pressable, type PressableProps, StyleSheet } from "react-native";
 
 import { Colors } from "@/constants";
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
 	button: {
+		flexWrap: "wrap",
 		backgroundColor: Colors.button.background,
 		padding: 10,
 		justifyContent: "center",
 		alignItems: "center",
-		width: "95%",
 		borderRadius: 7,
 	},
 });
 
-type BottomBarLinkButtonProps = PressableProps & {
-	children: ReactNode;
-	linkTo: Href<string>;
-};
+type BottomBarLinkButtonProps = PropsWithChildren<
+	PressableProps & {
+		linkTo: Href<string>;
+		action?: () => void;
+		enabled?: boolean;
+	}
+>;
 
 /**
  * A button that links to a specific route in the app.
@@ -26,17 +29,28 @@ type BottomBarLinkButtonProps = PressableProps & {
  * @param {BottomBarLinkButtonProps} props The component properties.
  * @param {ReactNode} props.children The children to render.
  * @param {Href<string>} props.linkTo The route to link to.
+ * @param {boolean?} props.enabled Whether the button is enabled. Defaults to true.
+ * @param {() => void?} props.action The action to perform when the button is pressed.
  *
  * @constructor
  */
 export default function BottomBarLinkButton({
 	children,
 	linkTo,
+	action,
+	enabled = true,
 	...props
 }: BottomBarLinkButtonProps) {
 	return (
-		<Pressable style={style.button} {...props}>
-			<Link href={linkTo}>{children}</Link>
-		</Pressable>
+		<Link href={linkTo} asChild>
+			<Pressable
+				style={{ ...styles.button, opacity: enabled ? 1 : 0.5 }}
+				{...props}
+				disabled={!enabled}
+				onPress={action}
+			>
+				{children}
+			</Pressable>
+		</Link>
 	);
 }

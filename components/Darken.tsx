@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { PropsWithChildren, ReactNode } from "react";
 import { StyleSheet, View } from "react-native";
 
 const styles = StyleSheet.create({
@@ -8,17 +8,16 @@ const styles = StyleSheet.create({
 	},
 });
 
-export type DarkenProps = {
-	children?: ReactNode;
+export type DarkenProps = PropsWithChildren<{
 	opacity?: number;
-};
+}>;
 
 /**
  * Darken the background with a semi-transparent overlay.
  *
  * @param {DarkenProps} props The component properties.
  * @param {ReactNode} [props.children] The children to render.
- * @param {number} [props.opacity=0.4] The opacity of the overlay.
+ * @param {number} [props.opacity=0.4] The opacity of the overlay, from 0 to 1.
  *
  * @constructor
  */

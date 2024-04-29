@@ -7,7 +7,7 @@ export const commonTextStyles = StyleSheet.create({
 	},
 	rumIsGone: {
 		fontFamily: "TheRumIsGone",
-		fontSize: 20,
+		fontSize: 18,
 	},
 	text: {
 		color: "white",

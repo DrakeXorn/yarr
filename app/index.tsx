@@ -7,9 +7,10 @@ import {
 	BottomBarLinkButton,
 	Darken,
 	LanguageButton,
+	TitlesContainer,
 } from "@/components";
-import { Hook } from "@/components/icons";
-import { RumIsGoneText, Title, TreasureMapText } from "@/components/texts";
+import { ForwardHook } from "@/components/icons";
+import { RumIsGoneText } from "@/components/texts";
 import { Colors, Languages } from "@/constants";
 
 const styles = StyleSheet.create({
@@ -17,13 +18,6 @@ const styles = StyleSheet.create({
 		width: "100%",
 		height: "100%",
 		objectFit: "cover",
-	},
-	titlesContainer: {
-		paddingTop: 100,
-	},
-	flexContainer: {
-		flex: 1,
-		padding: 20,
 	},
 	langButtonsContainer: {
 		flexDirection: "row",
@@ -34,22 +28,6 @@ const styles = StyleSheet.create({
 		flex: 4,
 	},
 });
-
-/**
- * The container for the titles of the home page.
- *
- * @constructor
- */
-function TitlesContainer() {
-	const { t } = useTranslation();
-
-	return (
-		<View style={styles.titlesContainer}>
-			<Title>YARR</Title>
-			<TreasureMapText>{t("home.subtitle")}</TreasureMapText>
-		</View>
-	);
-}
 
 /**
  * The container for the language selection buttons.
@@ -80,7 +58,7 @@ export default function HomePage() {
 			source={require("../assets/images/ship.jpeg")}
 		>
 			<Darken>
-				<TitlesContainer />
+				<TitlesContainer subtitleText={t("home.subtitle")} />
 				<LanguageButtonsContainer />
 				<View style={styles.emptySpace} />
 				<BottomBar>
@@ -88,7 +66,7 @@ export default function HomePage() {
 						<RumIsGoneText style={{ color: Colors.button.foreground }}>
 							{t("bottom_bar.start")}
 						</RumIsGoneText>
-						<Hook />
+						<ForwardHook />
 					</BottomBarLinkButton>
 				</BottomBar>
 			</Darken>
