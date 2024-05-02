@@ -1,6 +1,6 @@
 import { Text, View } from "react-native";
 
-export default function Quest1FirstScreen() {
+export default function Quest2FirstScreen() {
 	return (
 		<View
 			style={{
