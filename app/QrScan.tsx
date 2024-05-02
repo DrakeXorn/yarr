@@ -4,8 +4,10 @@ import {
 	PermissionStatus,
 	useCameraPermissions,
 } from "expo-camera/next";
+import { useRouter } from "expo-router";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Button, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 import {
 	Banner,
@@ -19,8 +21,6 @@ import { RumIsGoneText, TreasureMapText } from "@/components/texts";
 import { Colors } from "@/constants";
 import { verifyQrCode } from "@/helpers/app";
 import { useAppConfiguration } from "@/providers/AppConfigurationProvider";
-import { useRouter } from "expo-router";
-import { useState } from "react";
 
 const styles = StyleSheet.create({
 	titlesContainer: {
@@ -33,38 +33,29 @@ const styles = StyleSheet.create({
 	emptySpace: {
 		flex: 1,
 	},
+	error: {
+		color: Colors.special.foreground,
+		textAlign: "center",
+	},
 });
-
-function CameraPermissions() {
-	const [permission, requestPermission] = useCameraPermissions();
-
-	return (
-		<View>
-			<TitlesContainer subtitleText="Please allow camera permissions to scan QR codes" />
-			<View style={styles.emptySpace}></View>
-			<Button title="Allow camera permissions" onPress={requestPermission} />
-			<BottomBar>
-				<BottomBarLinkButton linkTo="/QrScan">
-					<BackwardHook />
-					<RumIsGoneText style={{ color: Colors.button.foreground }}>
-						Back
-					</RumIsGoneText>
-				</BottomBarLinkButton>
-			</BottomBar>
-		</View>
-	);
-}
 
 export default function QrScan() {
 	const { t } = useTranslation();
-	const { configuration, setConfiguration } = useAppConfiguration();
+	const { configuration } = useAppConfiguration();
 	const [permission, requestPermission] = useCameraPermissions();
-	const { navigate, back } = useRouter();
+	const { navigate } = useRouter();
 	const [error, setError] = useState<string | null>(null);
 
-	if (!permission || permission.status !== PermissionStatus.GRANTED) {
-		return <CameraPermissions />;
-	}
+	useEffect(() => {
+		if (permission?.status === PermissionStatus.UNDETERMINED) {
+			console.log("Requesting camera permission");
+			void requestPermission();
+		}
+
+		if (permission?.status === PermissionStatus.DENIED) {
+			setError(t("qr_camera.permission_denied"));
+		}
+	}, [permission]);
 
 	function onBarcodeScanned({ data }: BarcodeScanningResult) {
 		const qrData = verifyQrCode(data);
@@ -73,7 +64,7 @@ export default function QrScan() {
 			if (qrData.quest <= configuration.maxReachedQuest) {
 				navigate(qrData.path);
 			} else {
-				back();
+				setError(t("qr_camera.quest_not_reached"));
 			}
 		} else {
 			setError(t("qr_camera.invalid_code"));
@@ -113,15 +104,13 @@ export default function QrScan() {
 					></CameraView>
 				</Banner>
 				{error && (
-					<View style={styles.flexContainer}>
-						<TreasureMapText style={{ color: "red" }}>{error}</TreasureMapText>
-					</View>
+					<TreasureMapText style={styles.error}>{error}</TreasureMapText>
 				)}
 			</View>
 			<BottomBar>
 				<BottomBarLinkButton linkTo="/">
 					<BackwardHook />
-					<RumIsGoneText style={{ color: Colors.button.foreground }}>
+					<RumIsGoneText style={{ color: Colors.special.foreground }}>
 						{t("bottom_bar.back")}
 					</RumIsGoneText>
 				</BottomBarLinkButton>

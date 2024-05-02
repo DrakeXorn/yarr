@@ -16,7 +16,9 @@
 	},
 	"qr_camera": {
 		"scan_code": "Avast! {{username}}, scan th'\nQR code to embark on yer next adventure!",
-		"invalid_code": "Yer QR code not workin', landlubber !"
+		"invalid_code": "Yer QR code not workin', landlubber!",
+		"permission_denied": "We be needin' access th' camera, bud.",
+		"quest_not_reached": "Ye haven't sailed to the quest yet, matey"
 	},
 	"quest_1": {
 		"introduction": "{{username}}!!\nI be needin' ye! Lighten yer path ‘n come topside!"

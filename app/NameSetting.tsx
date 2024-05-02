@@ -103,7 +103,7 @@ export default function NameSetting() {
 			<BottomBar>
 				<BottomBarLinkButton linkTo="/">
 					<BackwardHook />
-					<RumIsGoneText style={{ color: Colors.button.foreground }}>
+					<RumIsGoneText style={{ color: Colors.special.foreground }}>
 						{t("bottom_bar.back")}
 					</RumIsGoneText>
 				</BottomBarLinkButton>
@@ -112,7 +112,7 @@ export default function NameSetting() {
 					enabled={name.length >= 2}
 					action={nextAction}
 				>
-					<RumIsGoneText style={{ color: Colors.button.foreground }}>
+					<RumIsGoneText style={{ color: Colors.special.foreground }}>
 						{t("bottom_bar.next")}
 					</RumIsGoneText>
 					<ForwardHook />

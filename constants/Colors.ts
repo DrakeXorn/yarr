@@ -16,8 +16,9 @@ export default {
 	background: "#000",
 	buttonBar: "rgba(255,255,255,0.95)",
 	button: {
-		foreground: "#c7a324",
 		background: "#4c2818",
 	},
-	tabIconDefault: "#ccc",
+	special: {
+		foreground: "#c7a324",
+	},
 };

@@ -8,9 +8,8 @@ const gamesToSlugs = {
 export function verifyQrCode(
 	code: string,
 ): { path: string; quest: number } | null {
-	const value = atob(code);
-
 	try {
+		const value = atob(code);
 		const { game, quest, path } = z
 			.object({
 				game: z.string().min(1),
@@ -36,7 +35,7 @@ export function verifyQrCode(
 
 		return { path: path.slice(slug.length), quest };
 	} catch (error) {
-		console.error("Invalid QR code", error);
+		console.log("Invalid QR code", error);
 		return null;
 	}
 }

@@ -16,7 +16,9 @@
 	},
 	"qr_camera": {
 		"scan_code": "Hoi ! {{username}}, scan de QR-code om aan je volgende avontuur te beginnen!",
-		"invalid_code": "Jouw QR-code is nie goed, matroos !"
+		"invalid_code": "Jouw QR-code is nie goed, matroos!",
+		"permission_denied": "We hebben je camera nodig om de QR-code te lezen.",
+		"quest_not_reached": "Je hebt de zoektocht nog niet gevonden."
 	},
 	"quest_1": {
 		"introduction": "{{username}} !!\nIk heb je nodig! Verlicht je pad en kom naar boven!"

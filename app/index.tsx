@@ -63,7 +63,7 @@ export default function HomePage() {
 				<View style={styles.emptySpace} />
 				<BottomBar>
 					<BottomBarLinkButton linkTo="/NameSetting">
-						<RumIsGoneText style={{ color: Colors.button.foreground }}>
+						<RumIsGoneText style={{ color: Colors.special.foreground }}>
 							{t("bottom_bar.start")}
 						</RumIsGoneText>
 						<ForwardHook />
