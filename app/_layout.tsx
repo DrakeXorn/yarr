@@ -22,7 +22,6 @@ SplashScreen.preventAutoHideAsync();
 
 i18next.use(initReactI18next).init({
 	lng: "en",
-	debug: true,
 	resources: {
 		en: {
 			translation: require("../i18n/en.json"),
@@ -77,7 +76,11 @@ function RootLayoutNav() {
 				<Stack>
 					<Stack.Screen
 						name="index"
-						options={{ title: "Home Page", headerShown: false }}
+						options={{
+							title: "Home Page",
+							headerShown: false,
+							gestureEnabled: false,
+						}}
 					/>
 					<Stack.Screen
 						name="NameSetting"

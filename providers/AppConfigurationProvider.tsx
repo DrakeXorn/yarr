@@ -72,7 +72,9 @@ export default function AppConfigurationProvider({
 	useEffect(() => {
 		Promise.all([
 			AsyncStorage.setItem("configuration", JSON.stringify(configuration)),
-			i18next.changeLanguage(configuration.language),
+			i18next.language !== configuration.language
+				? i18next.changeLanguage(configuration.language)
+				: Promise.resolve(),
 		]);
 	}, [configuration]);
 
