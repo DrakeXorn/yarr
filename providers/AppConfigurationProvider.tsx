@@ -8,8 +8,9 @@ import {
 	useState,
 } from "react";
 
-import { Languages } from "@/constants";
+import type { Languages } from "@/constants";
 import type { OneOf } from "@/helpers/array";
+import { deepEquals } from "@/helpers/object";
 
 type LanguageProviderProps = {
 	children: ReactNode;
@@ -19,6 +20,7 @@ export type Language = OneOf<typeof Languages>;
 
 export type AppConfigurationState = {
 	language: Language;
+	maxReachedQuest: 1 | 2 | 3;
 	name: string | null;
 };
 
@@ -47,23 +49,23 @@ export default function AppConfigurationProvider({
 }: LanguageProviderProps) {
 	const [configuration, setConfiguration] = useState<AppConfigurationState>({
 		language: "en",
+		maxReachedQuest: 1,
 		name: null,
 	});
 
 	useEffect(() => {
-		Promise.all([
-			AsyncStorage.getItem("language"),
-			AsyncStorage.getItem("userName"),
-		]).then(([lang, userName]) => {
-			const newConfiguration: AppConfigurationState = {
-				language:
-					lang && Languages.includes(lang as Language)
-						? (lang as Language)
-						: "en",
-				name: userName || "",
-			};
+		AsyncStorage.getItem("configuration").then((value) => {
+			const newConfiguration = value ? JSON.parse(value) : configuration;
 
-			setConfiguration(newConfiguration);
+			Object.entries(configuration).forEach(([key, value]) => {
+				if (!newConfiguration.hasOwnProperty(key)) {
+					newConfiguration[key] = value;
+				}
+			});
+
+			if (!deepEquals(newConfiguration, configuration)) {
+				setConfiguration(newConfiguration);
+			}
 		});
 	}, []);
 
