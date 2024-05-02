@@ -14,15 +14,30 @@
 		},
 		"assetBundlePatterns": ["**/*"],
 		"ios": {
-			"supportsTablet": false
+			"supportsTablet": false,
+			"infoPlist": {
+				"NSCameraUsageDescription": "Allow $(PRODUCT_NAME) to access your camera"
+			},
+			"bundleIdentifier": "be.henallux.masi.christophebernard.bourbonisland"
 		},
 		"android": {
 			"adaptiveIcon": {
 				"foregroundImage": "./assets/images/adaptive-icon.png",
 				"backgroundColor": "#4c2818"
-			}
+			},
+			"permissions": ["android.permission.CAMERA"],
+			"package": "be.henallux.masi.christophebernard.bourbonisland"
 		},
-		"plugins": ["expo-router"],
+		"plugins": [
+			"expo-router",
+			[
+				"expo-camera",
+				{
+					"cameraPermission": "Allow $(PRODUCT_NAME) to access your camera.",
+					"recordAudioAndroid": false
+				}
+			]
+		],
 		"experiments": {
 			"typedRoutes": true
 		}

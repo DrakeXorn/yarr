@@ -15,7 +15,7 @@
 		"state_your_name": "Renseigne ton nom :"
 	},
 	"qr_camera": {
-		"scan_code": "Halte ! {{username}}, scanne le code QR pour embarquer dans une nouvelle aventure !"
+		"scan_code": "Halte ! {{username}}, scanne le\ncode QR pour embarquer dans une\nnouvelle aventure !"
 	},
 	"quest_1": {
 		"introduction": "{{username}} !!\nJ'ai besoin de toi ! Éclaire ton chemin et viens sur le pont !"

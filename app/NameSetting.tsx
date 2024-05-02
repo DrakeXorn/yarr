@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, TextInput, View } from "react-native";
 
@@ -13,10 +13,7 @@ import { BackwardHook, ForwardHook } from "@/components/icons";
 import { RumIsGoneText, TreasureMapText } from "@/components/texts";
 import { commonTextStyles } from "@/components/texts/common";
 import { Colors } from "@/constants";
-import {
-	AppConfigurationContext,
-	type AppConfigurationContextType,
-} from "@/providers/AppConfigurationProvider";
+import { useAppConfiguration } from "@/providers/AppConfigurationProvider";
 
 const styles = StyleSheet.create({
 	titlesContainer: {
@@ -41,17 +38,13 @@ const styles = StyleSheet.create({
 		marginTop: 50,
 		width: "70%",
 	},
-	langButtonsContainer: {
-		flexDirection: "row",
-		justifyContent: "center",
-		marginTop: 20,
-	},
 	emptySpace: {
 		flex: 1,
 	},
 });
 
 type NameInputProps = {
+	name?: string;
 	setName: (name: string) => void;
 };
 
@@ -59,11 +52,12 @@ type NameInputProps = {
  * Name input component, using the provided props to set the name and notify when the input is ready
  *
  * @param {NameInputProps} props - The props for the component
+ * @param {string | undefined} props.name - The name if it is already set
  * @param {Function} props.setName - The function to set the name
  *
  * @constructor
  */
-function NameInput({ setName }: NameInputProps) {
+function NameInput({ name, setName }: NameInputProps) {
 	const { t } = useTranslation();
 
 	const onInputChange = (text: string) => {
@@ -79,6 +73,7 @@ function NameInput({ setName }: NameInputProps) {
 					onChangeText={onInputChange}
 					placeholderTextColor={Colors.text.input.placeholder}
 					style={styles.nameInputText}
+					value={name}
 				/>
 			</Banner>
 		</View>
@@ -92,8 +87,7 @@ function NameInput({ setName }: NameInputProps) {
  */
 export default function NameSetting() {
 	const { t } = useTranslation();
-	const { configuration, setConfiguration } =
-		useContext<AppConfigurationContextType>(AppConfigurationContext);
+	const { configuration, setConfiguration } = useAppConfiguration();
 
 	const [name, setName] = useState<string>("");
 
@@ -104,7 +98,7 @@ export default function NameSetting() {
 	return (
 		<Darken opacity={1}>
 			<TitlesContainer subtitleText={t("name_setting.banner")} />
-			<NameInput setName={setName} />
+			<NameInput name={name} setName={setName} />
 			<View style={styles.emptySpace} />
 			<BottomBar>
 				<BottomBarLinkButton linkTo="/">

@@ -1,11 +1,10 @@
-import { type FunctionComponent, useCallback, useContext } from "react";
+import { type FunctionComponent, useCallback } from "react";
 import { Pressable, StyleSheet } from "react-native";
 
 import { France, GreatBritain, Netherlands } from "@/components/flags";
 import {
-	AppConfigurationContext,
-	type AppConfigurationContextType,
 	type Language,
+	useAppConfiguration,
 } from "@/providers/AppConfigurationProvider";
 
 export type LanguageButtonProps = {
@@ -39,8 +38,7 @@ const langToFlag: { [key in Language]: FunctionComponent } = {
  * @returns The language button.
  */
 export default function LanguageButton({ language }: LanguageButtonProps) {
-	const { configuration, setConfiguration } =
-		useContext<AppConfigurationContextType>(AppConfigurationContext);
+	const { configuration, setConfiguration } = useAppConfiguration();
 
 	const onPress = useCallback(() => {
 		setConfiguration({ ...configuration, language: language });

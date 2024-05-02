@@ -8,15 +8,8 @@ export default function QuestsLayoutNav() {
 	return (
 		<Stack
 			screenOptions={{
-				headerShown: true,
+				headerShown: false,
 			}}
-		>
-			<Stack.Screen
-				name="index"
-				options={{
-					title: "Quest 1",
-				}}
-			/>
-		</Stack>
+		/>
 	);
 }

@@ -1,6 +1,12 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import i18next from "i18next";
-import { type ReactNode, createContext, useEffect, useState } from "react";
+import {
+	type ReactNode,
+	createContext,
+	useContext,
+	useEffect,
+	useState,
+} from "react";
 
 import { Languages } from "@/constants";
 import type { OneOf } from "@/helpers/array";
@@ -21,9 +27,13 @@ export type AppConfigurationContextType = {
 	setConfiguration: (config: AppConfigurationState) => void;
 };
 
-export const AppConfigurationContext = createContext(
+const AppConfigurationContext = createContext(
 	null as unknown as AppConfigurationContextType,
 );
+
+export function useAppConfiguration() {
+	return useContext(AppConfigurationContext);
+}
 
 /**
  * Provides the configuration for the app.

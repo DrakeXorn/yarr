@@ -1,9 +1,6 @@
-import {
-	AppConfigurationContext,
-	type AppConfigurationContextType,
-} from "@/providers/AppConfigurationProvider";
+import { useAppConfiguration } from "@/providers/AppConfigurationProvider";
+
 import { Link, Stack } from "expo-router";
-import { useContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 /**
@@ -13,9 +10,7 @@ import { StyleSheet, Text, View } from "react-native";
  * @constructor
  */
 export default function NotFoundScreen() {
-	const { configuration } = useContext<AppConfigurationContextType>(
-		AppConfigurationContext,
-	);
+	const { configuration } = useAppConfiguration();
 	return (
 		<>
 			<Stack.Screen options={{ title: "Oops!" }} />

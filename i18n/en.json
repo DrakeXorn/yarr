@@ -15,7 +15,7 @@
 		"state_your_name": "State yer name :"
 	},
 	"qr_camera": {
-		"scan_code": "Avast! {{username}}, scan th' QR code to embark on yer next adventure!"
+		"scan_code": "Avast! {{username}}, scan th'\nQR code to embark on yer next adventure!"
 	},
 	"quest_1": {
 		"introduction": "{{username}}!!\nI be needin' ye! Lighten yer path ‘n come topside!"
