@@ -1,4 +1,5 @@
 import {
+	type BarcodeScanningResult,
 	CameraView,
 	PermissionStatus,
 	useCameraPermissions,
@@ -14,11 +15,12 @@ import {
 	TitlesContainer,
 } from "@/components";
 import { BackwardHook } from "@/components/icons";
-import { RumIsGoneText } from "@/components/texts";
+import { RumIsGoneText, TreasureMapText } from "@/components/texts";
 import { Colors } from "@/constants";
 import { verifyQrCode } from "@/helpers/app";
 import { useAppConfiguration } from "@/providers/AppConfigurationProvider";
 import { useRouter } from "expo-router";
+import { useState } from "react";
 
 const styles = StyleSheet.create({
 	titlesContainer: {
@@ -57,10 +59,25 @@ export default function QrScan() {
 	const { t } = useTranslation();
 	const { configuration, setConfiguration } = useAppConfiguration();
 	const [permission, requestPermission] = useCameraPermissions();
-	const { navigate } = useRouter();
+	const { navigate, back } = useRouter();
+	const [error, setError] = useState<string | null>(null);
 
 	if (!permission || permission.status !== PermissionStatus.GRANTED) {
 		return <CameraPermissions />;
+	}
+
+	function onBarcodeScanned({ data }: BarcodeScanningResult) {
+		const qrData = verifyQrCode(data);
+
+		if (qrData) {
+			if (qrData.quest <= configuration.maxReachedQuest) {
+				navigate(qrData.path);
+			} else {
+				back();
+			}
+		} else {
+			setError(t("qr_camera.invalid_code"));
+		}
 	}
 
 	return (
@@ -86,13 +103,7 @@ export default function QrScan() {
 						barcodeScannerSettings={{
 							barcodeTypes: ["qr"],
 						}}
-						onBarcodeScanned={({ data }) => {
-							const path = verifyQrCode(data);
-							console.log("path", path);
-							if (path) {
-								navigate(path as never);
-							}
-						}}
+						onBarcodeScanned={onBarcodeScanned}
 						style={{
 							width: "75%",
 							height: "80%",
@@ -101,6 +112,11 @@ export default function QrScan() {
 						}}
 					></CameraView>
 				</Banner>
+				{error && (
+					<View style={styles.flexContainer}>
+						<TreasureMapText style={{ color: "red" }}>{error}</TreasureMapText>
+					</View>
+				)}
 			</View>
 			<BottomBar>
 				<BottomBarLinkButton linkTo="/">

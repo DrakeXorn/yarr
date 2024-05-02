@@ -15,7 +15,8 @@
 		"state_your_name": "Vul je naam in :"
 	},
 	"qr_camera": {
-		"scan_code": "Hoi ! {{username}}, scan de QR-code om aan je volgende avontuur te beginnen!"
+		"scan_code": "Hoi ! {{username}}, scan de QR-code om aan je volgende avontuur te beginnen!",
+		"invalid_code": "Jouw QR-code is nie goed, matroos !"
 	},
 	"quest_1": {
 		"introduction": "{{username}} !!\nIk heb je nodig! Verlicht je pad en kom naar boven!"
