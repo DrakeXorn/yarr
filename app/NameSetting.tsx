@@ -60,20 +60,16 @@ type NameInputProps = {
 function NameInput({ name, setName }: NameInputProps) {
 	const { t } = useTranslation();
 
-	const onInputChange = (text: string) => {
-		setName(text);
-	};
-
 	return (
 		<View style={styles.nameInput}>
 			<TreasureMapText>{t("name_setting.state_your_name")}</TreasureMapText>
 			<Banner type="small">
 				<TextInput
 					placeholder="e.g. Jack Sparrow"
-					onChangeText={onInputChange}
+					onChangeText={setName}
 					placeholderTextColor={Colors.text.input.placeholder}
 					style={styles.nameInputText}
-					value={name}
+					defaultValue={name}
 				/>
 			</Banner>
 		</View>
