@@ -1,5 +1,4 @@
 # YARR - a pirate-themed mobile escape game for Escape Museum
-=============================================================
 
 ## Description
 
