@@ -12,7 +12,8 @@
 	},
 	"name_setting": {
 		"banner": "Ik ken jou niet, matroos. Wie ben jij dan wel?",
-		"state_your_name": "Vul je naam in :"
+		"state_your_name": "Vul je naam in :",
+		"name_placeholder": "bijv. Jack Sparrow"
 	},
 	"qr_camera": {
 		"scan_code": "Hoi ! {{username}}, scan de QR-code om aan je volgende avontuur te beginnen!",

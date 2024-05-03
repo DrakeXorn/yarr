@@ -12,7 +12,8 @@
 	},
 	"name_setting": {
 		"banner": "Aye, I don't be knowin' ye, landlubber... Who be ye?",
-		"state_your_name": "State yer name :"
+		"state_your_name": "State yer name :",
+		"name_placeholder": "e.g. Jack Sparrow"
 	},
 	"qr_camera": {
 		"scan_code": "Avast! {{username}}, scan th'\nQR code to embark on yer next adventure!",

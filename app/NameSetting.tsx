@@ -65,7 +65,7 @@ function NameInput({ name, setName }: NameInputProps) {
 			<TreasureMapText>{t("name_setting.state_your_name")}</TreasureMapText>
 			<Banner type="small">
 				<TextInput
-					placeholder="e.g. Jack Sparrow"
+					placeholder={t("name_setting.name_placeholder")}
 					onChangeText={setName}
 					placeholderTextColor={Colors.text.input.placeholder}
 					style={styles.nameInputText}
