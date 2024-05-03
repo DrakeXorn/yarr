@@ -90,7 +90,10 @@ function RootLayoutNav() {
 						name="QrScan"
 						options={{ headerShown: false, gestureEnabled: false }}
 					/>
-					<Stack.Screen name="quests" options={{ headerShown: false }} />
+					<Stack.Screen
+						name="quests"
+						options={{ headerShown: false, gestureEnabled: false }}
+					/>
 				</Stack>
 			</AppConfigurationProvider>
 		</ThemeProvider>

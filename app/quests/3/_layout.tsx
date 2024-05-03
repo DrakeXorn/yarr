@@ -1,14 +1,15 @@
 import { Stack } from "expo-router";
 
 /**
- * Quests layout navigator
+ * The navigation layout for the third quest.
  * @constructor
  */
-export default function FirstQuestLayoutNav() {
+export default function ThirdQuestLayoutNav() {
 	return (
 		<Stack
 			screenOptions={{
 				headerShown: false,
+				gestureEnabled: false,
 			}}
 		/>
 	);

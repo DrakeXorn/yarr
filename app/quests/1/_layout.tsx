@@ -1,7 +1,7 @@
 import { Stack } from "expo-router";
 
 /**
- * Quests layout navigator
+ * The navigation layout for the first quest.
  * @constructor
  */
 export default function FirstQuestLayoutNav() {
@@ -9,6 +9,7 @@ export default function FirstQuestLayoutNav() {
 		<Stack
 			screenOptions={{
 				headerShown: false,
+				gestureEnabled: false,
 			}}
 		/>
 	);

@@ -1,6 +1,10 @@
 import { Text, View } from "react-native";
 
-export default function Quest3FirstScreen() {
+/**
+ * The first screen of the third quest.
+ * @constructor
+ */
+export default function ThirdQuestFirstScreen() {
 	return (
 		<View
 			style={{

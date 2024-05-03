@@ -9,6 +9,7 @@ export default function QuestsLayoutNav() {
 		<Stack
 			screenOptions={{
 				headerShown: false,
+				gestureEnabled: false,
 			}}
 		/>
 	);
