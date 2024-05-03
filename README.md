@@ -66,6 +66,10 @@ To install the game, follow these steps:
 	- [ ] Puzzle 3 introduction screen
 	- [ ] Puzzle 3 gameplay
 	- [ ] Puzzle 3 completion and navigation to the next screen
+- [ ] **Milestone 7**: Game completion
+	- [ ] Game completion screen
+	- [ ] Cleaning up the app's state
+	- [ ] Navigation to the home screen
 
 ## Contributors
 
