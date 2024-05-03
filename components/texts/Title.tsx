@@ -23,7 +23,7 @@ export default function Title({ style, ...props }: TextProps) {
 			style={[
 				commonTextStyles.text,
 				style,
-				commonTextStyles.rumIsGone,
+				commonTextStyles.rumIsGoneFont,
 				styles.title,
 			]}
 		/>

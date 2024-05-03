@@ -14,7 +14,12 @@ export default function TreasureMapText({ style, ...props }: TextProps) {
 	return (
 		<Text
 			{...props}
-			style={[commonTextStyles.text, style, commonTextStyles.treasurerMapText]}
+			style={[
+				commonTextStyles.text,
+				commonTextStyles.treasureMapSize,
+				style,
+				commonTextStyles.treasureMapFont,
+			]}
 		/>
 	);
 }

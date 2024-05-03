@@ -14,7 +14,12 @@ export default function RumIsGoneText({ style, ...props }: TextProps) {
 	return (
 		<Text
 			{...props}
-			style={[commonTextStyles.text, style, commonTextStyles.rumIsGone]}
+			style={[
+				commonTextStyles.text,
+				commonTextStyles.rumIsGoneSize,
+				style,
+				commonTextStyles.rumIsGoneFont,
+			]}
 		/>
 	);
 }
