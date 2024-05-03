@@ -6,12 +6,14 @@ import { Colors } from "@/constants";
 
 const styles = StyleSheet.create({
 	button: {
-		flexWrap: "wrap",
+		display: "flex",
+		flexDirection: "row",
 		backgroundColor: Colors.button.background,
 		padding: 10,
-		justifyContent: "center",
-		alignItems: "center",
+		height: 50,
 		borderRadius: 7,
+		alignItems: "center",
+		justifyContent: "center",
 	},
 });
 
