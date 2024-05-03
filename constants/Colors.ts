@@ -4,10 +4,6 @@ export default {
 			light: "#ffffff",
 			dark: "#4c2818",
 		},
-		userMention: {
-			light: "#fef4d0",
-			dark: "#4c2818",
-		},
 		input: {
 			background: "rgba(115,115,115,0.25)",
 			placeholder: "rgba(77,40,24,0.25)",
