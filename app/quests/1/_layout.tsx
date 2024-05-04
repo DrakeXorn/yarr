@@ -11,6 +11,8 @@ export default function FirstQuestLayoutNav() {
 				headerShown: false,
 				gestureEnabled: false,
 			}}
-		/>
+		>
+			<Stack.Screen name="index" />
+		</Stack>
 	);
 }
