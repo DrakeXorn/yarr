@@ -9,8 +9,17 @@ export type BannerProps = PropsWithChildren<{
 
 const styles = StyleSheet.create({
 	banner: {
-		width: "100%",
-		height: "100%",
+		flex: 1,
+		flexDirection: "column",
+	},
+	image: {
+		flex: 1,
+		resizeMode: "cover",
+		justifyContent: "center",
+		alignItems: "center",
+		padding: 20,
+		paddingEnd: 50,
+		paddingStart: 50,
 	},
 });
 
@@ -31,7 +40,7 @@ const bannerTypeToSource = {
 export default function Banner({ children, type = "default" }: BannerProps) {
 	return (
 		<View style={styles.banner}>
-			<ImageBackground source={bannerTypeToSource[type]}>
+			<ImageBackground source={bannerTypeToSource[type]} style={styles.image}>
 				{children}
 			</ImageBackground>
 		</View>

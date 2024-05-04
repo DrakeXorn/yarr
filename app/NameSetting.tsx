@@ -27,7 +27,9 @@ const styles = StyleSheet.create({
 	nameInput: {
 		marginTop: 20,
 		padding: 10,
-		flex: 3,
+		width: "100%",
+		maxHeight: "20%",
+		flex: 1,
 	},
 	nameInputText: {
 		backgroundColor: Colors.text.input.background,
@@ -38,6 +40,9 @@ const styles = StyleSheet.create({
 	},
 	emptySpace: {
 		flex: 1,
+	},
+	bannerContainer: {
+		aspectRatio: BannersAspectRatio.small,
 	},
 });
 
