@@ -89,7 +89,6 @@ function NameInput({ name, setName }: NameInputProps) {
 export default function NameSetting() {
 	const { t } = useTranslation();
 	const { configuration, setConfiguration } = useAppConfiguration();
-
 	const [name, setName] = useState<string>("");
 
 	const nextAction = useCallback(() => {
@@ -110,7 +109,7 @@ export default function NameSetting() {
 				</BottomBarLinkButton>
 				<BottomBarLinkButton
 					linkTo="/QrScan"
-					enabled={name.length >= 2}
+					enabled={name.length >= 1}
 					action={nextAction}
 				>
 					<RumIsGoneText style={{ color: Colors.special.foreground }}>
