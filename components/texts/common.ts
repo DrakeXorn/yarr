@@ -1,11 +1,11 @@
 import { StyleSheet } from "react-native";
 
 export const commonTextStyles = StyleSheet.create({
-	treasureMapFont: {
-		fontFamily: "TreasureMapDeadhand",
+	blackSamsGoldFont: {
+		fontFamily: "BlackSamsGold",
 	},
-	treasureMapSize: {
-		fontSize: 32,
+	blackSamsGoldFontSize: {
+		fontSize: 25,
 	},
 	rumIsGoneFont: {
 		fontFamily: "TheRumIsGone",

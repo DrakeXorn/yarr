@@ -1,9 +1,10 @@
-import { Title, TreasureMapText } from "@/components/texts";
+import { SamsGoldText, Title } from "@/components/texts";
 import { StyleSheet, View } from "react-native";
 
 const styles = StyleSheet.create({
 	titlesContainer: {
-		paddingTop: 100,
+		marginTop: 100,
+		marginHorizontal: 10,
 	},
 });
 
@@ -22,7 +23,7 @@ export default function TitlesContainer({
 	return (
 		<View style={styles.titlesContainer}>
 			<Title>YARR</Title>
-			<TreasureMapText>{subtitleText}</TreasureMapText>
+			<SamsGoldText>{subtitleText}</SamsGoldText>
 		</View>
 	);
 }

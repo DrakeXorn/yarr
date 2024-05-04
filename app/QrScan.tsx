@@ -4,20 +4,15 @@ import {
 	PermissionStatus,
 	useCameraPermissions,
 } from "expo-camera/next";
-import { useRouter } from "expo-router";
+import { type Href, useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
 
-import {
-	Banner,
-	BottomBar,
-	BottomBarLinkButton,
-	Darken,
-	TitlesContainer,
-} from "@/components";
+import { Banner, BottomBar, Darken, TitlesContainer } from "@/components";
+import { BottomBarActionButton } from "@/components/BottomBarLinkButton";
 import { BackwardHook } from "@/components/icons";
-import { RumIsGoneText, TreasureMapText } from "@/components/texts";
+import { RumIsGoneText, SamsGoldText } from "@/components/texts";
 import { Colors } from "@/constants";
 import { verifyQrCode } from "@/helpers/app";
 import { useAppConfiguration } from "@/providers/AppConfigurationProvider";
@@ -26,16 +21,21 @@ const styles = StyleSheet.create({
 	titlesContainer: {
 		paddingTop: 100,
 	},
-	flexContainer: {
-		flex: 1,
-		padding: 20,
-	},
-	emptySpace: {
-		flex: 1,
-	},
 	error: {
 		color: Colors.special.foreground,
+		// fontSize: 25,
 		textAlign: "center",
+	},
+	scannerContainer: {
+		width: "85%",
+		aspectRatio: 1,
+		justifyContent: "center",
+		alignSelf: "center",
+	},
+	camera: {
+		width: "100%",
+		aspectRatio: 1,
+		alignSelf: "center",
 	},
 });
 
@@ -43,9 +43,10 @@ export default function QrScan() {
 	const { t } = useTranslation();
 	const { configuration } = useAppConfiguration();
 	const [permission, requestPermission] = useCameraPermissions();
-	const { navigate } = useRouter();
+	const router = useRouter();
 	const [error, setError] = useState<string | null>(null);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: This is a false positive
 	useEffect(() => {
 		if (permission?.status === PermissionStatus.UNDETERMINED) {
 			console.log("Requesting camera permission");
@@ -62,7 +63,7 @@ export default function QrScan() {
 
 		if (qrData) {
 			if (qrData.quest <= configuration.maxReachedQuest) {
-				navigate(qrData.path);
+				router.replace(qrData.path as Href<string>);
 			} else {
 				setError(t("qr_camera.quest_not_reached"));
 			}
@@ -71,6 +72,10 @@ export default function QrScan() {
 		}
 	}
 
+	const goBackAction = () => {
+		router.back();
+	};
+
 	return (
 		<Darken opacity={1}>
 			<TitlesContainer
@@ -78,42 +83,25 @@ export default function QrScan() {
 					username: configuration.name,
 				})}
 			/>
-			<View
-				style={{
-					marginTop: 20,
-					padding: 40,
-					flex: 3,
-					width: "100%",
-					height: "100%",
-					justifyContent: "center",
-					alignItems: "center",
-				}}
-			>
+			<View style={styles.scannerContainer}>
 				<Banner type="large">
 					<CameraView
 						barcodeScannerSettings={{
 							barcodeTypes: ["qr"],
 						}}
 						onBarcodeScanned={onBarcodeScanned}
-						style={{
-							width: "75%",
-							height: "80%",
-							alignSelf: "center",
-							top: 30,
-						}}
-					></CameraView>
+						style={styles.camera}
+					/>
 				</Banner>
-				{error && (
-					<TreasureMapText style={styles.error}>{error}</TreasureMapText>
-				)}
 			</View>
+			{error && <SamsGoldText style={styles.error}>{error}</SamsGoldText>}
 			<BottomBar>
-				<BottomBarLinkButton linkTo="/">
+				<BottomBarActionButton action={goBackAction}>
 					<BackwardHook />
 					<RumIsGoneText style={{ color: Colors.special.foreground }}>
 						{t("bottom_bar.back")}
 					</RumIsGoneText>
-				</BottomBarLinkButton>
+				</BottomBarActionButton>
 			</BottomBar>
 		</Darken>
 	);

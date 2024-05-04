@@ -43,7 +43,7 @@ i18next.use(initReactI18next).init({
 export default function RootLayout() {
 	const [loaded, error] = useFonts({
 		TheRumIsGone: require("../assets/fonts/TheRumIsGone.ttf"),
-		TreasureMapDeadhand: require("../assets/fonts/TreasureMapDeadhand.ttf"),
+		BlackSamsGold: require("../assets/fonts/BlackSamsGold.ttf"),
 		...FontAwesome.font,
 	});
 

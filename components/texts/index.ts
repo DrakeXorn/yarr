@@ -1,5 +1,5 @@
 import RumIsGoneText from "./RumIsGoneText";
+import SamsGoldText from "./SamsGoldText";
 import Title from "./Title";
-import TreasureMapText from "./TreasureMapText";
 
-export { Title, TreasureMapText, RumIsGoneText };
+export { Title, SamsGoldText, RumIsGoneText };

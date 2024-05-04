@@ -10,9 +10,10 @@ import {
 	TitlesContainer,
 } from "@/components";
 import { BackwardHook, ForwardHook } from "@/components/icons";
-import { RumIsGoneText, TreasureMapText } from "@/components/texts";
+import { RumIsGoneText, SamsGoldText } from "@/components/texts";
 import { commonTextStyles } from "@/components/texts/common";
 import { Colors } from "@/constants";
+import { BannersAspectRatio } from "@/constants/Banners";
 import { useAppConfiguration } from "@/providers/AppConfigurationProvider";
 
 const styles = StyleSheet.create({
@@ -31,12 +32,9 @@ const styles = StyleSheet.create({
 	nameInputText: {
 		backgroundColor: Colors.text.input.background,
 		color: Colors.text.normal.dark,
-		fontSize: commonTextStyles.treasurerMapText.fontSize,
-		fontFamily: commonTextStyles.treasurerMapText.fontFamily,
-		height: "30%",
-		marginLeft: 55,
-		marginTop: 50,
-		width: "70%",
+		fontSize: commonTextStyles.blackSamsGoldFontSize.fontSize,
+		fontFamily: commonTextStyles.blackSamsGoldFont.fontFamily,
+		width: "100%",
 	},
 	emptySpace: {
 		flex: 1,
@@ -62,16 +60,18 @@ function NameInput({ name, setName }: NameInputProps) {
 
 	return (
 		<View style={styles.nameInput}>
-			<TreasureMapText>{t("name_setting.state_your_name")}</TreasureMapText>
-			<Banner type="small">
-				<TextInput
-					placeholder={t("name_setting.name_placeholder")}
-					onChangeText={setName}
-					placeholderTextColor={Colors.text.input.placeholder}
-					style={styles.nameInputText}
-					defaultValue={name}
-				/>
-			</Banner>
+			<SamsGoldText>{t("name_setting.state_your_name")}</SamsGoldText>
+			<View style={styles.bannerContainer}>
+				<Banner type="small">
+					<TextInput
+						placeholder={t("name_setting.name_placeholder")}
+						onChangeText={setName}
+						placeholderTextColor={Colors.text.input.placeholder}
+						style={styles.nameInputText}
+						defaultValue={name}
+					/>
+				</Banner>
+			</View>
 		</View>
 	);
 }
