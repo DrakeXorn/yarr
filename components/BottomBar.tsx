@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 		flexDirection: "row",
 		justifyContent: "center",
 		alignItems: "center",
-		gap: 10,
+		gap: 20,
 	},
 	empty: {
 		flex: 1,
@@ -38,11 +38,7 @@ const styles = StyleSheet.create({
 export default function BottomBar({ children }: PropsWithChildren) {
 	return (
 		<View style={styles.bar}>
-			<View style={styles.container}>
-				<View style={styles.empty} />
-				{children}
-				<View style={styles.empty} />
-			</View>
+			<View style={styles.container}>{children}</View>
 			<View style={styles.empty} />
 		</View>
 	);
