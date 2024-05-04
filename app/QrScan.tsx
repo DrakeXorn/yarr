@@ -5,7 +5,7 @@ import {
 	useCameraPermissions,
 } from "expo-camera/next";
 import { type Href, useRouter } from "expo-router";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
 
@@ -58,23 +58,26 @@ export default function QrScan() {
 		}
 	}, [permission]);
 
-	function onBarcodeScanned({ data }: BarcodeScanningResult) {
-		const qrData = verifyQrCode(data);
+	const onBarcodeScanned = useCallback(
+		({ data }: BarcodeScanningResult) => {
+			const qrData = verifyQrCode(data);
 
-		if (qrData) {
-			if (qrData.quest <= configuration.maxReachedQuest) {
-				router.replace(qrData.path as Href<string>);
+			if (qrData) {
+				if (qrData.quest <= configuration.maxReachedQuest) {
+					router.replace(qrData.path as Href<string>);
+				} else {
+					setError(t("qr_camera.quest_not_reached"));
+				}
 			} else {
-				setError(t("qr_camera.quest_not_reached"));
+				setError(t("qr_camera.invalid_code"));
 			}
-		} else {
-			setError(t("qr_camera.invalid_code"));
-		}
-	}
+		},
+		[router, configuration, t],
+	);
 
-	const goBackAction = () => {
+	const goBackAction = useCallback(() => {
 		router.back();
-	};
+	}, [router]);
 
 	return (
 		<Darken opacity={1}>
