@@ -49,7 +49,6 @@ export default function QrScan() {
 	// biome-ignore lint/correctness/useExhaustiveDependencies: This is a false positive
 	useEffect(() => {
 		if (permission?.status === PermissionStatus.UNDETERMINED) {
-			console.log("Requesting camera permission");
 			void requestPermission();
 		}
 

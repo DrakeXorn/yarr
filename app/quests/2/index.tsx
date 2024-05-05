@@ -1,3 +1,9 @@
+import { useRouter } from "expo-router";
+import React, { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { ImageBackground, StyleSheet, View } from "react-native";
+import RNShake from "react-native-shake";
+
 import { Banner, BottomBar, BottomBarLinkButton } from "@/components";
 import { BottomBarActionButton } from "@/components/BottomBarLinkButton";
 import { ForwardHook, Pistol } from "@/components/icons";
@@ -6,11 +12,6 @@ import { RumIsGoneText, SamsGoldText } from "@/components/texts";
 import { Colors } from "@/constants";
 import { BannersAspectRatio } from "@/constants/Banners";
 import { useAppConfiguration } from "@/providers/AppConfigurationProvider";
-import { useRouter } from "expo-router";
-import React, { useEffect, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { ImageBackground, StyleSheet, View } from "react-native";
-import RNShake from "react-native-shake";
 
 const styles = StyleSheet.create({
 	background: {
@@ -138,7 +139,6 @@ export default function SecondQuestScreen() {
 	const nextAction = useMemo(() => {
 		if (textId === 2) {
 			if (shakeCount >= 3) {
-				console.log("Navigating to the next quest");
 				return () => {
 					if (configuration.maxReachedQuest < 3) {
 						setConfiguration({ ...configuration, maxReachedQuest: 3 });

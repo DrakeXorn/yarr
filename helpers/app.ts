@@ -22,7 +22,6 @@ export function verifyQrCode(
 			})
 			.parse(JSON.parse(value));
 	} catch (error) {
-		console.log("Invalid QR code", error);
 		return null;
 	}
 
