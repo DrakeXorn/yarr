@@ -55,7 +55,7 @@ export default function HomePage() {
 	return (
 		<ImageBackground
 			style={styles.image}
-			source={require("../assets/images/ship.jpeg")}
+			source={require("@/assets/images/ship.jpeg")}
 		>
 			<Darken>
 				<TitlesContainer subtitleText={t("home.subtitle")} />

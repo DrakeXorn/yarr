@@ -24,13 +24,13 @@ i18next.use(initReactI18next).init({
 	lng: "en",
 	resources: {
 		en: {
-			translation: require("../i18n/en.json"),
+			translation: require("@/i18n/en.json"),
 		},
 		fr: {
-			translation: require("../i18n/fr.json"),
+			translation: require("@/i18n/fr.json"),
 		},
 		nl: {
-			translation: require("../i18n/nl.json"),
+			translation: require("@/i18n/nl.json"),
 		},
 	},
 });
@@ -42,8 +42,8 @@ i18next.use(initReactI18next).init({
  */
 export default function RootLayout() {
 	const [loaded, error] = useFonts({
-		TheRumIsGone: require("../assets/fonts/TheRumIsGone.ttf"),
-		BlackSamsGold: require("../assets/fonts/BlackSamsGold.ttf"),
+		TheRumIsGone: require("@/assets/fonts/TheRumIsGone.ttf"),
+		BlackSamsGold: require("@/assets/fonts/BlackSamsGold.ttf"),
 		...FontAwesome.font,
 	});
 
