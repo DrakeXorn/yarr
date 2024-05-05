@@ -19,7 +19,7 @@
 		"scan_code": "Halte ! {{username}}, scanne le code QR pour embarquer dans une nouvelle aventure !",
 		"invalid_code": "Ton code QR est invalide, moussaillon !",
 		"permission_denied": "Il nous faut la permission d'accéder à ta camera, matelot.",
-		"quest_not_reached": "Tu n'as pas encore atteint cette quite."
+		"quest_not_reached": "Tu n'as pas encore atteint cette quête."
 	},
 	"quest_1": {
 		"introduction": "{{username}} !!\nJ'ai besoin de toi ! Éclaire ton chemin et viens sur le pont !"
