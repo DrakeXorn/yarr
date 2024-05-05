@@ -2,13 +2,8 @@ import React, { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { StyleSheet, TextInput, View } from "react-native";
 
-import {
-	Banner,
-	BottomBar,
-	BottomBarLinkButton,
-	Darken,
-	TitlesContainer,
-} from "@/components";
+import { Banner, BottomBar, Darken, TitlesContainer } from "@/components";
+import { BottomBarLinkButton } from "@/components/buttons";
 import { BackwardHook, ForwardHook } from "@/components/icons";
 import { RumIsGoneText, SamsGoldText } from "@/components/texts";
 import { commonTextStyles } from "@/components/texts/common";

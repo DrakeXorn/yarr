@@ -4,8 +4,11 @@ import { useTranslation } from "react-i18next";
 import { ImageBackground, StyleSheet, View } from "react-native";
 import RNShake from "react-native-shake";
 
-import { Banner, BottomBar, BottomBarLinkButton } from "@/components";
-import { BottomBarActionButton } from "@/components/BottomBarLinkButton";
+import { Banner, BottomBar } from "@/components";
+import {
+	BottomBarActionButton,
+	BottomBarLinkButton,
+} from "@/components/buttons";
 import { ForwardHook, Pistol } from "@/components/icons";
 import QrCode from "@/components/icons/QrCode";
 import { RumIsGoneText, SamsGoldText } from "@/components/texts";
@@ -123,7 +126,7 @@ export default function SecondQuestScreen() {
 	const router = useRouter();
 
 	useEffect(() => {
-		const subscription = RNShake.addListener(() => {
+		RNShake.addListener(() => {
 			if (textId !== 2) {
 				return;
 			}
@@ -132,7 +135,7 @@ export default function SecondQuestScreen() {
 		});
 
 		return () => {
-			subscription.remove();
+			RNShake.removeAllListeners();
 		};
 	}, [textId]);
 

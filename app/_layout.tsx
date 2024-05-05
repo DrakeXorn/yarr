@@ -73,27 +73,17 @@ function RootLayoutNav() {
 		<ThemeProvider value={DefaultTheme}>
 			<AppConfigurationProvider>
 				<StatusBar hidden={true} />
-				<Stack>
-					<Stack.Screen
-						name="index"
-						options={{
-							title: "Home Page",
-							headerShown: false,
-							gestureEnabled: false,
-						}}
-					/>
-					<Stack.Screen
-						name="NameSetting"
-						options={{ headerShown: false, gestureEnabled: false }}
-					/>
-					<Stack.Screen
-						name="QrScan"
-						options={{ headerShown: false, gestureEnabled: false }}
-					/>
-					<Stack.Screen
-						name="quests"
-						options={{ headerShown: false, gestureEnabled: false }}
-					/>
+				<Stack
+					screenOptions={{
+						headerShown: false,
+						gestureEnabled: false,
+					}}
+				>
+					<Stack.Screen name="index" />
+					<Stack.Screen name="NameSetting" />
+					<Stack.Screen name="QrScan" />
+					<Stack.Screen name="quests" />
+					<Stack.Screen name="Ending" />
 				</Stack>
 			</AppConfigurationProvider>
 		</ThemeProvider>

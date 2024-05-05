@@ -4,11 +4,11 @@ import { ImageBackground, StyleSheet, View } from "react-native";
 
 import {
 	BottomBar,
-	BottomBarLinkButton,
 	Darken,
 	LanguageButton,
 	TitlesContainer,
 } from "@/components";
+import { BottomBarLinkButton } from "@/components/buttons";
 import { ForwardHook } from "@/components/icons";
 import { RumIsGoneText } from "@/components/texts";
 import { Colors, Languages } from "@/constants";

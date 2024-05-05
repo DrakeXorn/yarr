@@ -22,17 +22,18 @@
 		"quest_not_reached": "Tu n'as pas encore atteint cette quête."
 	},
 	"quest_1": {
-		"introduction": "{{username}} !!\nJ'ai besoin de toi ! Éclaire ton chemin et viens sur le pont !"
+		"introduction": "“{{username}} !!\nJ'ai besoin de toi ! Éclaire ton chemin et viens sur le pont !”"
 	},
 	"quest_2": {
 		"introduction": "Dehors, tu vois Buzzard, le Capitaine du Victorieux. En te regardant, il dit...",
-		"buzzard_screen_1": "Arr, tu es venu vite, matelot ! Aide-nous à attaquer le Nossa Senhora do Cabo !",
-		"buzzard_screen_2": "Donne un coup de main et charge les pistolets, {{username}}.\nSecoue-les bien !"
+		"buzzard_screen_1": "“Arr, tu es venu vite, matelot ! Aide-nous à attaquer le Nossa Senhora do Cabo !”",
+		"buzzard_screen_2": "“Donne un coup de main et charge les pistolets, {{username}}.\nSecoue-les bien !”"
 	},
 	"quest_3": {
 		"introduction": "Lors de l'abordage, l'équipage a réagi rapidement. Pendant le combat, Buzzard dit...",
-		"buzzard_screen_1": "Aye {{username}} ! Convoque Barbe Noire pour nous aider a gagner ce combat !",
-		"buzzard_screen_2": "Je te dois des remerciements. Rejoins-moi dans mes quartiers une fois ce travail fini."
+		"buzzard_screen_1": "“Aye {{username}} ! Convoque {{blackbeard}} pour nous aider a gagner ce combat !”",
+		"buzzard_screen_2": "“Je te dois des remerciements. Rejoins-moi dans mes quartiers une fois ce travail fini.”",
+		"blackbeard": "Barbe Noire"
 	},
-	"end_of_story": "Je te suis redevable, matelot. Prends cet or en gage de ma gratitude."
+	"end_of_story": "“Je te suis redevable, matelot. Prends cet or en gage de ma gratitude.”"
 }

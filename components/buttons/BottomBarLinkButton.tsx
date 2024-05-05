@@ -32,34 +32,6 @@ type BottomBarLinkButtonProps = Except<BottomBarButtonProps, "action"> & {
 };
 
 /**
- * A button that performs an action when pressed.
- *
- * @param {BottomBarButtonProps} props The component properties.
- * @param {ReactNode} props.children The children to render.
- * @param {() => void} props.action The action to perform when the button is pressed.
- * @param {boolean?} props.enabled Whether the button is enabled. Defaults to true.
- *
- * @constructor
- */
-export function BottomBarActionButton({
-	children,
-	action,
-	enabled = true,
-	...props
-}: BottomBarButtonProps) {
-	return (
-		<Pressable
-			style={{ ...styles.button, opacity: enabled ? 1 : 0.5 }}
-			{...props}
-			disabled={!enabled}
-			onPress={action}
-		>
-			{children}
-		</Pressable>
-	);
-}
-
-/**
  * A button that links to a specific route in the app.
  *
  * @param {BottomBarLinkButtonProps} props The component properties.
@@ -71,7 +43,7 @@ export function BottomBarActionButton({
  *
  * @constructor
  */
-export default function BottomBarLinkButton({
+export function BottomBarLinkButton({
 	children,
 	linkTo,
 	action,

@@ -22,17 +22,18 @@
 		"quest_not_reached": "Ye haven't sailed to the quest yet, matey"
 	},
 	"quest_1": {
-		"introduction": "{{username}}!!\nI be needin' ye! Lighten yer path ‘n come topside!"
+		"introduction": "“{{username}}!!\nI be needin' ye! Lighten yer path ‘n come topside!”"
 	},
 	"quest_2": {
 		"introduction": "Outside, you see Buzzard, Captain of The Victorious. Looking at you, he says...",
-		"buzzard_screen_1": "Arr, ye've come quick, matey! Help attack th’ Nossa Senhora do Cabo!",
-		"buzzard_screen_2": "Lend a hand 'n load th’ pistols, {{username}}.\nGive 'em a good shake!"
+		"buzzard_screen_1": "”Arr, ye've come quick, matey! Help attack th’ Nossa Senhora do Cabo!”",
+		"buzzard_screen_2": "“Lend a hand 'n load th’ pistols, {{username}}.\nGive 'em a good shake!”"
 	},
 	"quest_3": {
 		"introduction": "While boarding, the crew quickly responded. Whilst fighting, Buzzard says...",
-		"buzzard_screen_1": "Aye {{username}}! Invoke Blackbeard to aid us settlin’ this fight!",
-		"buzzard_screen_2": "Many thanks fer all. Join me in me quarters once our work be done."
+		"buzzard_screen_1": "“Aye {{username}}! Invoke {{blackbeard}} to aid us settlin’ this fight!”",
+		"buzzard_screen_2": "“Many thanks fer all. Join me in me quarters once our work be done.”",
+		"blackbeard": "Blackbeard"
 	},
-	"end_of_story": "I be in yer debt, matey. Take this gold as a token o' me thanks."
+	"end_of_story": "“I be in yer debt, matey. Take this gold as a token o' me thanks.”"
 }

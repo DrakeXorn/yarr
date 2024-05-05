@@ -22,17 +22,18 @@
 		"quest_not_reached": "Je hebt de zoektocht nog niet gevonden."
 	},
 	"quest_1": {
-		"introduction": "{{username}} !!\nIk heb je nodig! Verlicht je pad en kom naar boven!"
+		"introduction": "”{{username}} !!\nIk heb je nodig! Verlicht je pad en kom naar boven!”"
 	},
 	"quest_2": {
 		"introduction": "Buiten zie je Buzzard, de Kapitein van De Zegevierende. Hij kijkt naar je en zegt...",
-		"buzzard_screen_1": "Arr, je bent snel gekomen, maat! Help ons om de Nossa Senhora do Cabo aan te vallen!",
-		"buzzard_screen_2": "Geef een handje en laad de pistolen, {{username}}.\nSchud ze goed!"
+		"buzzard_screen_1": "”Arr, je bent snel gekomen, maat! Help ons om de Nossa Senhora do Cabo aan te vallen!”",
+		"buzzard_screen_2": "”Geef een handje en laad de pistolen, {{username}}.\nSchud ze goed!”"
 	},
 	"quest_3": {
 		"introduction": "Bij het aan boord gaan reageerde de bemanning snel. Tijdens het gevecht zegt Buzzard...",
-		"buzzard_screen_1": "Aye {{username}} ! Roep Zwartebaard aan om ons te helpen deze strijd te beslechten!",
-		"buzzard_screen_2": "Veel dank voor alles. Kom naar mijn hut zodra ons werk klaar is."
+		"buzzard_screen_1": "”Aye {{username}} ! Roep {{blackbeard}} aan om ons te helpen deze strijd te beslechten!”",
+		"buzzard_screen_2": "”Veel dank voor alles. Kom naar mijn hut zodra ons werk klaar is.”",
+		"blackbeard": "Zwartebaard"
 	},
-	"end_of_story": "Ik sta bij je in het krijt, matroos. Neem dit goud als teken van mijn dankbaarheid."
+	"end_of_story": "”Ik sta bij je in het krijt, matroos. Neem dit goud als teken van mijn dankbaarheid.”"
 }

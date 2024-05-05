@@ -1,5 +1,8 @@
-import { Banner, BottomBar, BottomBarLinkButton, Darken } from "@/components";
-import { BottomBarActionButton } from "@/components/BottomBarLinkButton";
+import { Banner, BottomBar, Darken } from "@/components";
+import {
+	BottomBarActionButton,
+	BottomBarLinkButton,
+} from "@/components/buttons";
 import { ForwardHook } from "@/components/icons";
 import QrCode from "@/components/icons/QrCode";
 import { RumIsGoneText, SamsGoldText } from "@/components/texts";

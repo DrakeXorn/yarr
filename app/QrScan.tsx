@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 import { StyleSheet, View } from "react-native";
 
 import { Banner, BottomBar, Darken, TitlesContainer } from "@/components";
-import { BottomBarActionButton } from "@/components/BottomBarLinkButton";
+import { BottomBarActionButton } from "@/components/buttons";
 import { BackwardHook } from "@/components/icons";
 import { RumIsGoneText, SamsGoldText } from "@/components/texts";
 import { Colors } from "@/constants";
