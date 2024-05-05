@@ -89,7 +89,7 @@ function NameInput({ name, setName }: NameInputProps) {
 export default function NameSetting() {
 	const { t } = useTranslation();
 	const { configuration, setConfiguration } = useAppConfiguration();
-	const [name, setName] = useState<string>("");
+	const [name, setName] = useState<string>(configuration.name || "");
 
 	const nextAction = useCallback(() => {
 		setConfiguration({ ...configuration, name });
