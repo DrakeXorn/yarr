@@ -62,14 +62,14 @@ To install the game, follow these steps:
   - [x] Puzzle 2 introduction screen
   - [x] Puzzle 2 gameplay
   - [x] Puzzle 2 completion and navigation to the next screen
-- [ ] **Milestone 6**: Puzzle 3
-  - [ ] Puzzle 3 introduction screen
-  - [ ] Puzzle 3 gameplay
-  - [ ] Puzzle 3 completion and navigation to the next screen
-- [ ] **Milestone 7**: Game completion
-  - [ ] Game completion screen
-  - [ ] Cleaning up the app's state
-  - [ ] Navigation to the home screen
+- [x] **Milestone 6**: Puzzle 3
+  - [x] Puzzle 3 introduction screen
+  - [x] Puzzle 3 gameplay
+  - [x] Puzzle 3 completion and navigation to the next screen
+- [x] **Milestone 7**: Game completion
+  - [x] Game completion screen
+  - [x] Cleaning up the app's state
+  - [x] Navigation to the home screen
 
 ## Contributors
 
