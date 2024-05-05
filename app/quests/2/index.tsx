@@ -121,26 +121,30 @@ export default function SecondQuestScreen() {
 	const [textId, setTextId] = useState<number>(0);
 	const router = useRouter();
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: We don't need to ass textId in the dependencies as we need to handle the shakes after the text segments have been shown
 	useEffect(() => {
 		const subscription = RNShake.addListener(() => {
 			if (textId !== 2) {
 				return;
 			}
-			setShakeCount((prevCount) => prevCount + 1);
+
+			setShakeCount((prevCount) => (prevCount < 5 ? prevCount + 1 : prevCount));
 		});
 
 		return () => {
 			subscription.remove();
 		};
-	}, []);
+	}, [textId]);
 
 	const nextAction = useMemo(() => {
 		if (textId === 2) {
-			// shake count
 			if (shakeCount >= 3) {
+				console.log("Navigating to the next quest");
 				return () => {
-					setConfiguration({ ...configuration, maxReachedQuest: 3 });
+					if (configuration.maxReachedQuest < 3) {
+						setConfiguration({ ...configuration, maxReachedQuest: 3 });
+					}
+
+					RNShake.removeAllListeners();
 					router.navigate("/quests/3");
 				};
 			}
@@ -170,7 +174,7 @@ export default function SecondQuestScreen() {
 					<QrCode />
 				</BottomBarLinkButton>
 				<BottomBarActionButton
-					enabled={textId < 2 || shakeCount === 3}
+					enabled={textId < 2 || shakeCount >= 3}
 					action={nextAction}
 				>
 					<RumIsGoneText style={{ color: Colors.special.foreground }}>

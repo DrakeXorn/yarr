@@ -56,7 +56,10 @@ export default function FirstQuestScreen() {
 
 	const disableTorchAndNavigateAction = useCallback(() => {
 		switchTorchState(false).then(() => {
-			setConfiguration({ ...configuration, maxReachedQuest: 2 });
+			if (configuration.maxReachedQuest < 2) {
+				setConfiguration({ ...configuration, maxReachedQuest: 2 });
+			}
+
 			router.navigate("/quests/2");
 		});
 	}, [router, switchTorchState, configuration, setConfiguration]);
