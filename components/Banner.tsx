@@ -10,6 +10,7 @@ export type BannerProps = PropsWithChildren<{
 const styles = StyleSheet.create({
 	banner: {
 		flex: 1,
+		width: "100%",
 		flexDirection: "column",
 	},
 	image: {
@@ -24,9 +25,9 @@ const styles = StyleSheet.create({
 });
 
 const bannerTypeToSource = {
-	small: require("../assets/images/banners/small.png"),
-	default: require("../assets/images/banners/default.png"),
-	large: require("../assets/images/banners/large.png"),
+	small: require("@/assets/images/banners/small.png"),
+	default: require("@/assets/images/banners/default.png"),
+	large: require("@/assets/images/banners/large.png"),
 };
 
 /**

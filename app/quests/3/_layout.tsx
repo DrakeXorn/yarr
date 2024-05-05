@@ -11,6 +11,8 @@ export default function ThirdQuestLayoutNav() {
 				headerShown: false,
 				gestureEnabled: false,
 			}}
-		/>
+		>
+			<Stack.Screen name="index" />
+		</Stack>
 	);
 }

@@ -40,36 +40,36 @@ To install the game, follow these steps:
 ## App milestones
 
 - [x] **Milestone 1**: Home screen and language selection
-	- [x] Home screen
-	- [x] Language selection
-	- [x] Navigation to the next screen
+  - [x] Home screen
+  - [x] Language selection
+  - [x] Navigation to the next screen
 - [x] **Milestone 2**: User identification
-	- [x] User identification screen
-	- [x] Allowing the user to enter their name
-	- [x] Checking if the user has entered a name (length > 0)
-	- [x] Saving the user's name
-	- [x] Navigation to the next screen
+  - [x] User identification screen
+  - [x] Allowing the user to enter their name
+  - [x] Checking if the user has entered a name (length > 0)
+  - [x] Saving the user's name
+  - [x] Navigation to the next screen
 - [x] **Milestone 3**: Qr code navigation
-	- [x] QR code scanning screen
-	- [x] Scanning the QR code
-	- [x] Checking QR code validity
-	- [x] Navigation to the next screen
-- [ ] **Milestone 4**: Puzzle 1
-	- [ ] Puzzle 1 introduction screen
-	- [ ] Puzzle 1 gameplay
-	- [ ] Puzzle 1 completion and navigation to the next screen
-- [ ] **Milestone 5**: Puzzle 2
-	- [ ] Puzzle 2 introduction screen
-	- [ ] Puzzle 2 gameplay
-	- [ ] Puzzle 2 completion and navigation to the next screen
+  - [x] QR code scanning screen
+  - [x] Scanning the QR code
+  - [x] Checking QR code validity
+  - [x] Navigation to the next screen
+- [x] **Milestone 4**: Puzzle 1
+  - [x] Puzzle 1 introduction screen
+  - [x] Puzzle 1 gameplay
+  - [x] Puzzle 1 completion and navigation to the next screen
+- [x] **Milestone 5**: Puzzle 2
+  - [x] Puzzle 2 introduction screen
+  - [x] Puzzle 2 gameplay
+  - [x] Puzzle 2 completion and navigation to the next screen
 - [ ] **Milestone 6**: Puzzle 3
-	- [ ] Puzzle 3 introduction screen
-	- [ ] Puzzle 3 gameplay
-	- [ ] Puzzle 3 completion and navigation to the next screen
+  - [ ] Puzzle 3 introduction screen
+  - [ ] Puzzle 3 gameplay
+  - [ ] Puzzle 3 completion and navigation to the next screen
 - [ ] **Milestone 7**: Game completion
-	- [ ] Game completion screen
-	- [ ] Cleaning up the app's state
-	- [ ] Navigation to the home screen
+  - [ ] Game completion screen
+  - [ ] Cleaning up the app's state
+  - [ ] Navigation to the home screen
 
 ## Contributors
 

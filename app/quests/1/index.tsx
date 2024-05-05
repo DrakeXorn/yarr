@@ -45,20 +45,21 @@ const styles = StyleSheet.create({
 });
 
 /**
- * The first screen of the first quest.
+ * The screen of the first quest.
  * @constructor
  */
-export default function FirstQuestFirstScreen() {
+export default function FirstQuestScreen() {
 	const { t } = useTranslation();
-	const { configuration } = useAppConfiguration();
+	const { configuration, setConfiguration } = useAppConfiguration();
 	const router = useRouter();
 	const [torchIsOn, switchTorchState] = useTorch();
 
 	const disableTorchAndNavigateAction = useCallback(() => {
 		switchTorchState(false).then(() => {
+			setConfiguration({ ...configuration, maxReachedQuest: 2 });
 			router.navigate("/quests/2");
 		});
-	}, [router, switchTorchState]);
+	}, [router, switchTorchState, configuration, setConfiguration]);
 
 	return (
 		<ImageBackground source={require("@/assets/images/quests/quest_1.jpeg")}>
