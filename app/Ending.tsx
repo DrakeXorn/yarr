@@ -1,3 +1,8 @@
+import { useRouter } from "expo-router";
+import React, { useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import { ImageBackground, StyleSheet, View } from "react-native";
+
 import { Banner, BottomBar } from "@/components";
 import { BottomBarActionButton } from "@/components/buttons";
 import { BackwardHook } from "@/components/icons";
@@ -5,10 +10,6 @@ import { RumIsGoneText, SamsGoldText } from "@/components/texts";
 import { Colors } from "@/constants";
 import { BannersAspectRatio } from "@/constants/Banners";
 import { useAppConfiguration } from "@/providers/AppConfigurationProvider";
-import { useRouter } from "expo-router";
-import React, { useMemo } from "react";
-import { useTranslation } from "react-i18next";
-import { ImageBackground, StyleSheet, View } from "react-native";
 
 const styles = StyleSheet.create({
 	background: {

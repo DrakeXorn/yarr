@@ -39,7 +39,6 @@ const styles = StyleSheet.create({
 		aspectRatio: BannersAspectRatio.default,
 	},
 	pistolsBannerContainer: {
-		// float centered, put at the top
 		top: 50,
 		left: 0,
 		right: 0,
@@ -63,7 +62,9 @@ type PistolIconsBannerProps = {
 /**
  * The banner that displays the pistols loaded by the shake events.
  *
- * @param pistolsLoaded
+ * @param {PistolIconsBannerProps} props The component properties.
+ * @param {number} props.pistolsLoaded The number of pistols to render.
+ *
  * @constructor
  */
 function PistolIconsBanner({ pistolsLoaded }: PistolIconsBannerProps) {
