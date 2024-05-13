@@ -25,7 +25,7 @@
 		"introduction": "“{{username}} !!\nJ'ai besoin de toi ! Éclaire ton chemin et viens sur le pont !”"
 	},
 	"quest_2": {
-		"introduction": "Dehors, tu vois Buzzard, le Capitaine du Victorieux. En te regardant, il dit...",
+		"introduction": "Dehors, tu vois La Buse, le Capitaine du Victorieux. En te regardant, il dit...",
 		"buzzard_screen_1": "“Arr, tu es venu vite, matelot ! Aide-nous à attaquer le Nossa Senhora do Cabo !”",
 		"buzzard_screen_2": "“Donne un coup de main et charge les pistolets, {{username}}.\nSecoue-les bien !”"
 	},
